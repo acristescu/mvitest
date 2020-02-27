@@ -24,7 +24,7 @@ import io.zenandroid.mvi.repolist.items.LoadingItem
 import io.zenandroid.mvi.repolist.items.RepoItem
 import kotlinx.android.synthetic.main.repo_list_fragment.*
 
-class RepoListFragment : Fragment(), MviView<RepoListAction, RepoListState> {
+class RepoListFragment : Fragment(), MviView<RepoListState, RepoListAction> {
     companion object {
         fun newInstance() = RepoListFragment()
     }

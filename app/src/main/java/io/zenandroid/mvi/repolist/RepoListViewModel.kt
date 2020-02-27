@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable
 import io.zenandroid.mvi.mvi.MviView
 import io.zenandroid.mvi.mvi.Store
 
-class RepoListViewModel (private val store: Store<RepoListAction, RepoListState>): ViewModel() {
+class RepoListViewModel (private val store: Store<RepoListState, RepoListAction>): ViewModel() {
 
     private val wiring = store.wire()
     private var viewBinding: Disposable? = null
@@ -14,7 +14,7 @@ class RepoListViewModel (private val store: Store<RepoListAction, RepoListState>
         wiring.dispose()
     }
 
-    fun bind(view: MviView<RepoListAction, RepoListState>) {
+    fun bind(view: MviView<RepoListState, RepoListAction>) {
         viewBinding = store.bind(view)
     }
 
